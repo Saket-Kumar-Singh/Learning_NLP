@@ -67,34 +67,35 @@ for prog, Url in enumerate(urls):
     progress_bar(prog + 1, len(urls))
     html_text = requests.get(Url).text
     soup = BeautifulSoup(html_text, 'lxml')
-    driver.get(Url)
-    # try: 
-    #     more_button.click()
-    try:
-        # Wait until the element is clickable
-        # wait = WebDriverWait(driver, 1)
-
-        more_button = driver.find_element(By.CLASS_NAME, "read-more")
-        # element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "read-more")))
-        more_button.click()    
-    # Click the element
-    except:
-        continue
-        # more_button = driver.find_element("xpath", "/html/body/div[1]/div[5]/div[3]/div[1]/div[1]/div[2]/div[2]/a").get_attribute("href")
-        # print("Element Found")
-        # print(more_button)
-        # # more_button.clic
-        # # try:
-        # driver.get(more_button)
-        # more_button.click()
-        # except: 
-        #     print(f"Error with More {prog+1}")
-        #     continue
     
-    try:
-        project_description = driver.find_element('xpath', '/html/body/div[1]/div[5]/div[3]/div[1]/div[1]/div[2]/div[2]')
-    except:
-        print(f"Error with description {prog+1}")
+    # driver.get(Url)
+    # # try: 
+    # #     more_button.click()
+    # try:
+    #     # Wait until the element is clickable
+    #     # wait = WebDriverWait(driver, 1)
+
+    #     more_button = driver.find_element(By.CLASS_NAME, "read-more")
+    #     # element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "read-more")))
+    #     more_button.click()    
+    # # Click the element
+    # except:
+    #     continue
+    #     # more_button = driver.find_element("xpath", "/html/body/div[1]/div[5]/div[3]/div[1]/div[1]/div[2]/div[2]/a").get_attribute("href")
+    #     # print("Element Found")
+    #     # print(more_button)
+    #     # # more_button.clic
+    #     # # try:
+    #     # driver.get(more_button)
+    #     # more_button.click()
+    #     # except: 
+    #     #     print(f"Error with More {prog+1}")
+    #     #     continue
+    
+    # try:
+    #     project_description = driver.find_element('xpath', '/html/body/div[1]/div[5]/div[3]/div[1]/div[1]/div[2]/div[2]')
+    # except:
+    #     print(f"Error with description {prog+1}")
     # print(project_description.text.strip())
     # print("--------------------------------")
     # print("--------------------------------")
@@ -132,7 +133,7 @@ for prog, Url in enumerate(urls):
         data.append(txt)
     except:
         continue
-    
+
 # print(data)
 print("\n", end = "\n")
 print("Completed! Making csv")
